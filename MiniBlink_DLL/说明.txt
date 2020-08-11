@@ -1,0 +1,7 @@
+﻿
+
+1、一定先编译本工程，把生成的dll文件添加到引用本dll的“引用”中即可，注意debug和release，确定好你添加的是哪个版本
+
+2、https://gitee.com/ampereufo/MBforNETDemo/
+
+3、QQ:17136608

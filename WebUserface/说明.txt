@@ -1,0 +1,17 @@
+﻿
+
+1、本DEMO演示MB作为“原生+H5”开发模式的整体解决方案，既客户端应用内嵌web组件，使用H5来编写应用界面，完成用户交互（类似react等框架），这也是MB项目最早的设计初衷。
+
+2、Form为c#原生窗口，设置FormBorderStyle属性为None，MB绑定到该Form控件上，所有的界面元素及交互全部用H5编写。
+
+3、业务逻辑可能频繁需要js和c#交互，请参看JS-NET项目。
+
+4、首先编译MiniBlink_DLL，把生成的dll添加到本工程引用中，建议引用时直接引用生成dll的原始目录，调试时会自动跳转到dll源码，方便
+
+5、编译本工程，在生成exe的同目录下放上node.dll
+
+6、运行即可，如果没成功，换个姿势重试下
+
+7、https://gitee.com/ampereufo/MBforNETDemo/
+
+8、QQ:17136608

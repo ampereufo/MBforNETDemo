@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>H5编写应用界面Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .header {
+            width: 100%;
+            height: 26px;
+            background-color: DodgerBlue;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .header-text {
+            flex: 1;
+            height: 26px;
+            line-height: 26px;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        .op-btn {
+            float: right;
+            height: 26px;
+            background-color: DodgerBlue;
+            padding: 2px 5px 2px 5px;
+            cursor: default;
+        }
+
+        .btn {
+            margin: 10px;
+            height: 30px;
+            background-color: #EEEEEE;
+            line-height: 26px;
+        }
+
+        .inner {
+            width: 100%;
+            height: 300px;
+            background-color: Beige;
+        }
+    </style>
+    <script>
+        fireDropFileEvent = function (files, x, y, isDone) {
+            var data = {
+                detail: {
+                    files: files.split(","),
+                    x: x,
+                    y: y,
+                    isDone: isDone
+                }
+            };
+
+            document.getElementById("label").innerText = JSON.stringify(data.detail);
+        }
+    </script>
+</head>
+<body>
+    <div class="header" onmousedown="drag()" ondblclick="max()">
+        <span class="header-text">H5编写应用界面Demo</span>
+        <div class="op-btn-box">
+            <a class="op-btn" onclick="shut()">×</a>
+            <a id="max-btn" class="op-btn" onclick="max()">□</a>
+            <a class="op-btn" onclick="min()">_</a>
+        </div>
+    </div>
+
+    <div class="inner">
+        <div class="btn" onclick="alert('整个可见页面都是web页，c#原生界面只作为载体在底层默默运行，完全不可见')">整个可见页面都是web页，c#原生界面只作为载体在底层默默运行，完全不可见</div>
+        <div class="btn" onclick="alert('边框可以拖动大小')">边框可以拖动大小</div>
+        <div class="btn" onclick="alert('双击标题栏可实现最大化')">双击标题栏可实现最大化</div>
+        <div class="btn" onclick="alert('支持拖动文件到本web页')">支持拖动文件到本web页</div>
+        <div class="btn" onclick="transparent()">点我可以透明化本窗口</div>
+        <div id="label">示例：</div>
+    </div>
+</body>
+</html>

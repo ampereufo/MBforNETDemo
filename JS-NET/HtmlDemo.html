@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>这是H5页面</title>
+</head>
+<body style="background-color: #90EE90;">
+    <script>
+        function getText(arg)
+        {
+            var str = document.getElementById(arg);
+            return str.innerHTML;
+        }
+
+        function showText()
+        {
+            alert('【我是c#调起的js对话框】text的内容为：' + document.getElementById('text').innerHTML);
+        }
+    </script>
+
+    <div style="width: auto; height: auto;">
+        <div id="text" style="color:#F00; font-weight:bold; height:30px; margin:30px;">绿色区域是网页，MB世界上最小的浏览器内核组件，没有之一，不服来辩！！</div>
+        
+        <div style="background-color:#EEEEEE; height:30px; width:600px; margin:30px;" onclick="JsFunc1()">【按钮1】：JsFunc1()，js调用c#函数，无参数无返回值</div>
+        <div style="background-color:#EEEEEE; height:30px; width:600px; margin:30px;" onclick="JsFunc2('MiniBlink')">【按钮2】：JsFunc2('MiniBlink')，js调用c#函数，有参数无返回值</div>
+        <div style="background-color:#EEEEEE; height:30px; width:600px; margin:30px;" onclick="alert('【我是js对话框】c#返回给我的JsFunc3函数的执行结果为：' + JsFunc3(100, 200, 300))">【按钮3】：JsFunc3(100, 200, 300)，js调用c#函数，有参数有返回值</div>
+    </div>
+</body>
+</html>
